@@ -1,6 +1,6 @@
 #!/usr/bin/env python2.6
 # -*- coding: utf-8 -*-
-# pylint: disable-msg=W0612,W0231,R0904,W0141,R0903,R0201
+# pylint: disable-msg=
 
 """ General helper functions
 
@@ -16,8 +16,6 @@ from datetime import datetime, timedelta, tzinfo
 import cPickle
 import zlib
 import json
-from pymongo.binary import Binary
-from pymongo.objectid import ObjectId
 import time
 import random
 #from itertools import izip, cycle
@@ -166,7 +164,7 @@ def jzloads(jzstr):
     return json.loads(zlib.decompress(jzstr))
 
 def convert_bytes(bytes_):
-    """Convert int total byte value to human readable
+    """ Convert int total byte value to human readable
 
     Args:
         * `bytes_` (int): number of bytes to convert
@@ -201,17 +199,20 @@ class Utc(tzinfo):
 
     """
     def utcoffset(self):
-        """SHEATS NEEDS TO DOCUMENT
+        """
+
         """
         return ZERO
 
     def tzname(self):
-        """SHEATS NEEDS TO DOCUMENT
+        """
+
         """
         return "UTC"
 
     def dst(self):
-        """SHEATS NEEDS TO DOCUMENT
+        """
+
         """
         return ZERO
 UTC = Utc()
@@ -225,17 +226,20 @@ class FixedOffset(tzinfo):
         self.__name = name
 
     def utcoffset(self):
-        """SHEATS NEEDS TO DOCUMENT
+        """
+
         """
         return self.__offset
 
     def tzname(self):
-        """SHEATS NEEDS TO DOCUMENT
+        """
+
         """
         return self.__name
 
     def dst(self):
-        """SHEATS NEEDS TO DOCUMENT
+        """
+
         """
         return ZERO
 
